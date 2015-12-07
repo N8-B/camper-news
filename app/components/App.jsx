@@ -38,7 +38,7 @@ const App = React.createClass({
     return (
       <div className="container">
         <div className="header">
-          <h1>Camper News</h1>
+          <h1>Camper News <span className="source-code-link"><a href="https://github.com/N8-B/camper-news">view source code</a></span></h1>
           <span className="decoration-element"></span>
         </div>
 
