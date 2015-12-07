@@ -1,0 +1,119 @@
+// Variables
+$card-border-color: $base-border-color
+$card-border: 1px solid $card-border-color
+$card-background: lighten($card-border-color, 10%)
+$card-header-background: $card-background
+$card-margin: 1em
+$card-image-hover-opacity: 0.7
+$card-image-hover-color: $light-gray
+
+.container
+  +outer-container
+
+  .header
+    +row
+    h1
+      font-size: $base-font-size * 2
+      line-height: $base-line-height * 0.7
+      text-transform: uppercase
+      margin-bottom: 0.25em
+      color: $base-font-color
+
+  .decoration-element
+    width: calc(100% - 1em)
+    height: 15px
+    display: block
+    margin-bottom: 1.5rem
+    background-image: linear-gradient(to right, $base-font-color 1px, transparent 0%)
+    background-size: 3px 100%
+
+  .news-items
+    +display(flex)
+    +flex-wrap(wrap)
+    +justify-content(space-between)
+    +align-content(space-between)
+
+    .news-item
+      +flex-basis(15em)
+      +flex-grow(2)
+      +transition (all 0.2s ease-in-out)
+      background-color: $card-background
+      border-radius: $base-border-radius
+      border: $card-border
+      margin: 0 $card-margin $base-spacing 0
+      position: relative
+
+      .news-image
+        overflow: hidden
+
+        img
+          +transition (all 0.3s ease-in-out)
+          border-top-left-radius: $base-border-radius
+          border-top-right-radius: $base-border-radius
+          +filter(grayscale(100%))
+          width: 100%
+
+          &:focus,
+          &:hover
+            +filter(grayscale(0%))
+
+    .news-header
+      +transition (all 0.2s ease-in-out)
+      background-color: $card-header-background
+      border-bottom: $card-border
+      border-radius: $base-border-radius $base-border-radius 0 0
+      font-weight: bold
+      line-height: $base-line-height * 0.85
+      padding: ($base-spacing / 3) ($base-spacing / 2)
+
+    .news-copy
+      font-size: 0.9em
+      line-height: 1.5em
+      padding: 0 ($base-spacing / 2) ($base-spacing / 2) ($base-spacing / 2)
+
+      p
+        margin: 0 0 ($base-spacing / 2)
+
+      i.fa
+        color: $red
+
+      a
+        text-transform: uppercase
+        font-size: $base-font-size * 0.9
+
+      .upvotes
+        margin-top: 0.25em
+
+      .time
+        color: $medium-gray
+
+    &:active
+      background-color: $card-background
+
+      .news-header
+        background-color: $card-background
+
+      // +span-columns(6)
+      // +omega(2n)
+      //
+      // margin-bottom: 1em
+      // height: 350px
+      // padding: 1em
+      // border: 1px solid $medium-gray
+      //
+      // +media($medium-screen-up)
+      //   +span-columns(4)
+      //   +omega-reset(2n)
+      //   +omega(3n)
+      //
+      //   height: 350px
+      //
+      // +media($large-screen-up)
+      //   +span-columns(3)
+      //   +omega-reset(3n)
+      //   +omega(4n)
+      //
+      //   height: 400px
+      //
+      // img
+      //   width: 100%
