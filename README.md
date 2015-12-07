@@ -4,7 +4,7 @@ ___
 
 This is the **source code** for the Camper News zipline for Free Code Camp.
 
-[VIEW DEMO]()
+[VIEW DEMO](http://n8-b.github.io/camper-news/)
 
 ### How to Use
 Clone or download this repo. Run `npm install` from the root folder.
